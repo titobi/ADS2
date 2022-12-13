@@ -32,7 +32,24 @@ cnty_gdp,year_gdp = stats(filename,countries,columns,indicators[3])
 print(cnty_co2.describe())
 
 
+plt.figure(figsize=(10,7),dpi=500)
+for i in range(len(countries)):
+    plt.plot(year_co2.index,year_co2[countries[i]],label=countries[i])
+plt.title('Year on Year Trend of the CO2 Emission for these 4 countries')
+plt.xlabel('Year')
+plt.ylabel('CO2 Emision')
+plt.legend()
+plt.show()
 
+
+plt.figure(figsize=(10,7),dpi=500)
+for i in range(len(countries)):
+    plt.plot(year_gdp.index,year_gdp[countries[i]],label=countries[i])
+plt.title('Year on Year Trend of the GDP for these 4 countries')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.show()
 
 
 
