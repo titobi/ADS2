@@ -52,5 +52,34 @@ plt.legend()
 plt.show()
 
 
+Jordan = pd.DataFrame(
+ {'C02 emission': year_co2['Jordan'].astype(float),
+ 'Arable land': year_land['Jordan'].astype(float),
+ 'Forest Area': year_forest['Jordan'].astype(float),
+ 'GDP': year_gdp['Jordan'].astype(float)},
+ ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'])
+
+print(Jordan.corr())
+
+plt.figure(figsize=(8,5))
+sns.heatmap(Jordan.corr(),annot=True,cmap='Greens')
+plt.title('Correlation heatmap Jordan')
+plt.show()
+
+Croatia = pd.DataFrame(
+ {'C02 emission': year_co2['Croatia'].astype(float),
+ 'Arable land': year_land['Croatia'].astype(float),
+ 'Forest Area': year_forest['Croatia'].astype(float),
+ 'GDP': year_gdp['Croatia'].astype(float)},
+ ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'])
+
+print(Croatia.corr())
+
+plt.figure(figsize=(8,5))
+sns.heatmap(Croatia.corr(),annot=True,cmap='Greens')
+plt.title('Correlation heatmap Croatia')
+plt.show()
+
+
 
 
