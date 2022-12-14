@@ -39,19 +39,19 @@ print(year_co2.describe())
 year_co2 = year_co2.astype(float)
 
 #We plot a line graph for the Year on Year Trend of the CO2 Emission for these 4 countries
-plt.figure(figsize=(11,7),dpi=500)
+plt.figure(figsize=(10,6),dpi=700)
 for i in range(len(countries)):
     plt.plot(year_co2.index,year_co2[countries[i]],label=countries[i])
 plt.title('Year on Year Trend of the CO2 Emission for these 4 countries')
 plt.xlabel('Year')
 plt.ylabel('CO2 Emision')
-plt.legend()
+plt.legend(bbox_to_anchor=(1,1))
 plt.show()
 
 year_gdp = year_gdp.astype(float)
 
 #We plot a line graph for the Year on Year Trend of the GDP for these 4 countries
-plt.figure(figsize=(10,7),dpi=500)
+plt.figure(figsize=(10,7),dpi=700)
 for i in range(len(countries)):
     plt.plot(year_gdp.index,year_gdp[countries[i]],label=countries[i])
 plt.title('Year on Year Trend of the GDP for these 4 countries')
@@ -111,3 +111,6 @@ plt.xlabel('Countries')
 plt.ylabel('Arable Land')
 plt.rcParams["figure.dpi"] = 500
 plt.show()
+
+
+https://databank.worldbank.org/reports.aspx?source=2&series=EG.USE.ELEC.KH.PC&country=#
