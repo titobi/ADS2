@@ -31,8 +31,8 @@ cnty_gdp,year_gdp = stats(filename,countries,columns,indicators[3])
 
 print(cnty_co2.describe())
 
-
-plt.figure(figsize=(10,7),dpi=500)
+year_co2 = year_co2.astype(float)
+plt.figure(figsize=(11,7),dpi=500)
 for i in range(len(countries)):
     plt.plot(year_co2.index,year_co2[countries[i]],label=countries[i])
 plt.title('Year on Year Trend of the CO2 Emission for these 4 countries')
@@ -41,7 +41,7 @@ plt.ylabel('CO2 Emision')
 plt.legend()
 plt.show()
 
-
+year_gdp = year_gdp.astype(float)
 plt.figure(figsize=(10,7),dpi=500)
 for i in range(len(countries)):
     plt.plot(year_gdp.index,year_gdp[countries[i]],label=countries[i])
@@ -50,6 +50,7 @@ plt.xlabel('Year')
 plt.ylabel('GDP')
 plt.legend()
 plt.show()
+
 
 
 Jordan = pd.DataFrame(
@@ -81,5 +82,11 @@ plt.title('Correlation heatmap Croatia')
 plt.show()
 
 
-
+cnty_forest =  cnty_forest.astype(float)
+cnty_forest.plot(kind='bar')
+plt.title('Grouped bar for Forest on for different countries over the years')
+plt.xlabel('Countries')
+plt.ylabel('Forest Area')
+plt.rcParams["figure.dpi"] = 500
+plt.show()
 
